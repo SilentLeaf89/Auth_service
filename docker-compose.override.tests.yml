@@ -1,0 +1,12 @@
+version: '3'
+services:
+  tests:
+    image: authapi:${AUTH_API_VERSION}
+    entrypoint: /tests/tests-entrypoint.sh
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./tests:/tests/

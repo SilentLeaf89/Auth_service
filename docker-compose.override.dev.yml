@@ -1,0 +1,25 @@
+version: '3'
+services:
+  fastapi:
+    volumes:
+      - ./src:/app
+      - ./alembic.ini:/alembic.ini
+      - ./alembic:/alembic
+
+    entrypoint: ./entrypoint-dev.sh
+    ports:
+      - 80:80
+
+  postgres:
+    ports:
+      - 5432:5432
+
+  nginx:
+    deploy:
+      replicas: 0
+
+  redis:
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - ./.data/rd:/data

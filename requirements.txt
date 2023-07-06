@@ -1,0 +1,15 @@
+fastapi==0.97.0
+orjson==3.8.13
+pydantic==1.10.8
+uvicorn[standard]==0.22.0
+gunicorn==20.1.0
+alembic==1.11.1
+SQLAlchemy==2.0.16
+redis==4.4.2
+Werkzeug==2.3.6
+asyncpg==0.27.0
+psycopg2-binary==2.9.6
+async_fastapi_jwt_auth==0.5.1
+passlib[bcrypt]==1.7.4
+backoff==2.2.1
+typer[all]==0.9.0
